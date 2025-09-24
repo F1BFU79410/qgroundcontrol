@@ -394,9 +394,9 @@ double CorridorScanComplexItem::timeBetweenShots(void)
 double CorridorScanComplexItem::_calcTransectSpacing(void) const
 {
     double transectSpacing = _cameraCalc.adjustedFootprintSide()->rawValue().toDouble();
-    if (transectSpacing < 0.5) {
+    if (transectSpacing < 0.3) {
         // We can't let spacing get too small otherwise we will end up with too many transects.
-        // So we limit to 0.5 meter spacing as min and set to huge value which will cause a single
+        // So we limit to 0.3 meter spacing as min and set to huge value which will cause a single
         // transect to be added.
         transectSpacing = 100000;
     }
